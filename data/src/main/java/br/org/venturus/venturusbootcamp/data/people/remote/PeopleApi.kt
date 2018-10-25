@@ -5,10 +5,10 @@ import retrofit2.http.GET
 
 interface PeopleApi {
 
-    @GET("users")
+    @GET("/prod/users")
     fun getPeople(): Single<PeopleResponse>
 
     companion object Factory {
-        const val BASE_URL = "http://bootcamp.us-east-1.elasticbeanstalk.com/"
+        const val BASE_URL = " https://xctndp5sg8.execute-api.us-east-1.amazonaws.com/"
     }
 }
