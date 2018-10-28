@@ -6,13 +6,14 @@ class Foo {
     var baz = "baz"
         set(value) {
             // Propriedades em Kotlin não quebram encapsulamento.
-            TODO("Remover essa linha")
-            field = value
+            // TODO("Remover essa linha")
+            field = "$value a mais"
         }
 }
 
 fun main(args: Array<String>) {
     var foo = Foo()
+    println("foo = ${foo.foo}, bar = ${foo.bar}, baz = ${foo.baz}")
 
     foo = Foo()
 //    foo.bar = "goosfraba"

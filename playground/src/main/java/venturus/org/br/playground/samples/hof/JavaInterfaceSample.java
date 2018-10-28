@@ -1,6 +1,6 @@
 package venturus.org.br.playground.samples.hof;
 
-public class JavaInterfaceSample {
+class JavaInterfaceSample {
 
     public static void main(String[] args) {
 

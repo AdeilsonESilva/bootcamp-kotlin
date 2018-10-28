@@ -4,7 +4,7 @@ import java.util.Random
 
 class Calculator {
 
-    var calculus = 0
+    private var calculus = 0
 
     fun calculate(): Int {
         calculus = Random().nextInt(100)
@@ -31,10 +31,14 @@ class Scientist {
         var scienceCalculus = 0
 
         //TODO Refatore este bloco de código com o 'let' para evitar chamar `!!`
-        if (calculator != null) {
+        calculator?.let{
+            scienceCalculus = it.calculate()
+            scienceCalculus += it.recalculate()
+        }
+        /*if (calculator != null) {
             scienceCalculus = calculator!!.calculate()
             scienceCalculus += calculator!!.recalculate()
-        }
+        }*/
 
         println("EUREKA!!!! $scienceCalculus")
 
@@ -45,7 +49,13 @@ class Scientist {
 fun main(args: Array<String>) {
     //TODO Refatore este bloco de código com o 'apply' ou 'with' para evitar chamar scientist repetidamente
     val scientist = Scientist()
-    scientist.calculator = Calculator()
+    scientist.apply {
+        calculator = Calculator()
+        pencil = Pencil()
+        makeScience()
+    }
+
+    /*scientist.calculator = Calculator()
     scientist.pencil = Pencil()
-    scientist.makeScience()
+    scientist.makeScience()*/
 }

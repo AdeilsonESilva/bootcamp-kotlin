@@ -12,6 +12,7 @@ fun sendMissile(geopoint: GeoPoint?) {
     } else {
         println("Falha ao enviar missil, localização desconhecida!")
     }
+//    geopoint?.let { println(println("Enviando missil para $it")) } ?: println("Falha ao enviar missil, localização desconhecida!")
 }
 
 fun main(args: Array<String>) {
@@ -22,6 +23,7 @@ fun main(args: Array<String>) {
     )
 
     people.forEach {
-        TODO("Chamar o método 'sendMissiles' para tentar destruir a casa dos instrutores!")
+        //TODO("Chamar o método 'sendMissiles' para tentar destruir a casa dos instrutores!")
+        sendMissile(it.address?.geopoint)
     }
 }

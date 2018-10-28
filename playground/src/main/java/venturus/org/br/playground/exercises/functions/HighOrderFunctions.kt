@@ -19,7 +19,12 @@ fun populate(count: Int, createPersonFunc: (Int) -> Person): List<Person> {
 fun main(args: Array<String>) {
     val people = mutableListOf<Person>()
 
-    TODO("Use o método populate para criar uma lista de pessoas")
+//    TODO("Use o método populate para criar uma lista de pessoas")
+
+//    people.add(populate(10, ))
+    people.addAll(populate(5) {
+        Person("ade", it)
+    })
 
     people.forEach { println(it) }
 }

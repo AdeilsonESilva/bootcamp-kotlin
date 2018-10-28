@@ -9,11 +9,14 @@ class Adapter {
     }
 }
 
+
 fun main(args: Array<String>) {
     val adapter = Adapter()
 
-    TODO("Crie um lambda que imprima a posição clicada e o atribua no adapter")
+//    TODO("Crie um lambda que imprima a posição clicada e o atribua no adapter")
 
+    adapter.onItemClickListener = { println(it) }
     adapter.click(1)
     adapter.click(3)
+
 }

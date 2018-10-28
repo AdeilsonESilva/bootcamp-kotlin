@@ -34,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         val personId = intent?.extras?.getString(EXTRA_PERSON_ID)
         logD { "loadPerson = [$personId]" }
 
+        personId?.let { viewModel.loadPersonInformation(it) }
 
     }
 
